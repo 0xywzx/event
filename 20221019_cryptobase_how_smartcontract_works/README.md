@@ -10,7 +10,7 @@
 - ①　PCでMetamaskのインストール
   - [こちらのサイト](https://jpyc.gitbook.io/jpyc/user/buy-jpyc/prepare#pc)を参考にインストールできます
 - ②　テストネット(Goerli)でのETHの取得
-  - こちらのサイトにログイン後、①で作成したアドレスを入力するとETHが取得できます
+  - [こちらのサイト](https://mumbaifaucet.com/)にログイン後、①で作成したアドレスを入力するとETHが取得できます
 
 事前準備で不明点ありましたらご連絡ください。　　
 
