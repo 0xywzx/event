@@ -1,1 +1,9 @@
-{"description":"Hashmask #4147","external_url":"https://www.thehashmasks.com/detail/4147","image":"https://hashmasksstore.blob.core.windows.net/hashmasks/14288.jpg","attributes":[{"trait_type":"Character","value":"Male"},{"trait_type":"Mask","value":"Mexican"},{"trait_type":"Skin Color","value":"Dark"},{"trait_type":"Eye Color","value":"Dark"},{"trait_type":"Item","value":"No Item"},{"trait_type":"Background","value":"Doodle"}]}
+{
+  "name": "NFTの名前",
+  "discription": "NFTの詳細説明",
+  "image": "https://raw.githubusercontent.com/0xywzx/event/main/20221019_cryptobase_how_smartcontract_works/image.png",
+  "attributes": [
+    {"trait_type": "CryptoBase勉強会", "value": "参加"},
+    {"trait_type": "特徴", "value": "いろいろ"},
+  ]
+}
