@@ -1,0 +1,8 @@
+{
+  "name": "NFTの名前",
+  "discription": "NFTの詳細説明",
+  "image": "",
+  "attributes": [
+    {"trait_type": "CryptoBase勉強会", "value": "出席票"}
+  ]
+}
