@@ -1,9 +1,1 @@
-{
-  "name": "NFTの名前",
-  "discription": "NFTの詳細説明",
-  "image": "https://raw.githubusercontent.com/0xywzx/event/main/20221019_cryptobase_how_smartcontract_works/image.png",
-  "attributes": [
-    {"trait_type": "CryptoBase勉強会", "value": "参加"},
-    {"trait_type": "特徴", "value": "いろいろ"},
-  ]
-}
+{"name":"NFTの名前","discription":"NFTの詳細説明","image": "https://raw.githubusercontent.com/0xywzx/event/main/20221019_cryptobase_how_smartcontract_works/image.png","attributes":[{"trait_type": "CryptoBase勉強会", "value": "参加"},{"trait_type": "特徴", "value": "いろいろ"}]}
