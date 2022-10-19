@@ -1,0 +1,15 @@
+{
+  "name": "script",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Yosuke-Aramaki",
+  "private": true,
+  "dependencies": {
+    "ethereumjs-common": "^1.5.2",
+    "ethereumjs-tx": "^2.1.0",
+    "web3": "^1.2.1"
+  },
+  "scripts": {
+    "dev": "node index.js",
+  }
+}
