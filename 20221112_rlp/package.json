@@ -1,0 +1,16 @@
+{
+  "name": "script",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "private": true,
+  "dependencies": {
+    "bn.js": "^5.2.1",
+    "keccak256": "^1.0.6",
+    "rlp": "^3.0.0",
+    "web3": "^1.8.1"
+  },
+  "scripts": {
+    "dev": "node index.js"
+  }
+}
