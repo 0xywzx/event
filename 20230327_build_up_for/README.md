@@ -81,6 +81,14 @@
   - [Cancun](https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/cancun.md)
     - [EIP-4844: Shard Blob Transactions](https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/cancun.md)
     - [EOF](https://notes.ethereum.org/@ipsilon/eof1-unified-specification)
+      - EOF以前
+        - EVMでは一個一個チェックしている（指示があるか、指示が適切か、ガス代は十分か）ので無駄がある、ただゆえにシンプルではある
+        - スマートコントラクトのコードとデータが混ざっていた
+      - EOF
+        - EVMのバージョン管理による、コードとデータの分離
+        - 実行時に検証していたものをデプロイ時に検証（stack over/under flow）し、バグの少ないコントラクトに
+      -
+      -
 
 ### Ethereumの今後をどう捉えるか
 
@@ -221,3 +229,10 @@
   - https://www.youtube.com/live/kGjFTzRTH3Q?feature=share
 - zk-SNARKsの原理
   - https://zenn.dev/qope/articles/f94b37ff2d9541
+- Paweł Bylica : Possible Future of EVM
+  - https://www.youtube.com/watch?v=o-9pDJCe7iM
+- PEEPanEIP#70: EVM Object Format (EIP-3540 & EIP-3670) with Andrei Maiboroda
+  - https://www.youtube.com/watch?v=GMeRA-xPp-E
+- Everything about the EVM Object Format (EOF)
+  - https://notes.ethereum.org/@ipsilon/evm-object-format-overview
+  -
