@@ -4,22 +4,68 @@ theme: gaia
 header: ""
 footer: "by **＠_ywzx**"
 paginate: true
+style: |
+  section
+    {
+      font-size: 1.8em;
+    }
+---
+
+<style>
+  h1 {
+    font-size: 2.1em;
+    margin-top: 1em;
+    margin-bottom: 0.2em;
+  }
+  h2 {
+    font-size: 1.6em;
+    margin-top: 0.4em;
+    margin-bottom: 1em;
+    font-weight: 300;
+  }
+</style>
+
+# 開発者が抑えておきたい
+## 2023年イーサリアムエコシステムに起きること
+
+BUILD UP for Web3 エンジニア
+2023年3月27日
+
+<!--
+_class: lead
+_paginate: false
+_header: ""
+_footer: ""
+
+backgroundColor: #192043
+color: #ffffff
+-->
 
 ---
 
 ![bg](image/title.png)
 
+
+<!--
+_paginate: false
+_header: ""
+_footer: ""
+-->
+
+---
+
+# 目次
+1. 開発者として押さえておくべきイーサリアムアコシステムの現状とこれから
+2. ブロックチェーンをどう捉えるか
+3. ETH Tokyoに向けてサービスの事例紹介
+
 ---
 
 <!--
-_backgroundColor: orange
-paginate: true
+_class: lead
 -->
 
-# 目次
-- 開発者として押さえておくべきイーサリアムアコシステムの現状とこれから
-- ブロックチェーンをどう捉えるか
-- ETH Tokyoに向けてサービスの事例紹介
+# 1.　開発者として押さえておくべきイーサリアムアコシステムの現状とこれから
 
 ---
 
@@ -37,7 +83,8 @@ paginate: true
 - Scalabilityの一つとしてのLayer2
 - L2の実態はスマートコントラクト
   - ORのトランザクションをまとめてL1に書き込んでいる、その情報を元にL2のnode/sequencerを構築
-  - ZKRの場合はstate diffのみを書き込んでる
+    - ex) OP：[CanonicalTransactionChain (CTC)](https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2)
+  - ZKRの場合は[state diff](https://ethereum.org/en/developers/docs/scaling/zk-rollups/)のみを書き込んでる
 
 ---
 
@@ -78,7 +125,7 @@ paginate: true
 ### Ethereum現状をどう捉えるか
 
 - 23年はOR、それ以降はZKR
-- ORにもよさはある
+- ORにはEthrerumのアップデートに追従しやすいよさはある
 - StarkNetは独自路線を進んでいて長期でみると面白い。
 - Polygonがどこまで伸びるか
     - [Supernets](https://wiki.polygon.technology/docs/supernets/get-started/what-are-supernets/) / [Avail](https://www.alchemy.com/dapps/polygon-avail)/ Nightfall/[Miden](https://wiki.polygon.technology/docs/miden/intro/main/)
@@ -126,17 +173,49 @@ paginate: true
 
 ---
 
+<!--
+_class: lead
+_paginate: false
+_header: ""
+_footer: ""
+
+backgroundColor: #192043
+color: #ffffff
+-->
+
+# 2. ブロックチェーンをどう捉えるか
+
+---
+
+### 開発者としてブロックチェーンをどう捉えるか
+
+- Web2 : 情報革命 → 完成系としてのAI
+- Web3 : 価値革命 →　??
+  - **ブロックチェーンではそれ以外の分野（何かしらの価値がつくもの）も大きく変える**
+
+---
+
 ### 開発者としてブロックチェーンをどう捉えるか
 
 - ブロックチェーン = Ethereumはstate machine ≒ DB
 - スマートコントラクト = stateの書き込みと読み込みの定義 ≒ API
   - お金を払えば誰でも書き込みができる、読み込みはタダでできる
   - その書き込まれたデータは恣意的に変更できない（セキュリティー）
-  - **価値がつかなかったものに価値をつける / 流動性の低かった資産の流動性を向上させる**
+
+#### 価値がつかなかったものに価値をつける
+#### 流動性の低かった（市場に出てなかった）資産の流動性を向上させる
 
 ---
 
-## ETH Tokyoに向けてサービスの事例紹介
+<!--
+_class: lead
+-->
+
+## 3. ETH Tokyoに向けてサービスの事例紹介
+
+---
+
+# ETH Tokyoに向けてサービスの事例紹介
 
 - スマートコントラクトのアプリケーションは大きく分けると２つがメイン
   - EIP（特にERC20とERC721）によって生まれたアプリ
