@@ -116,22 +116,73 @@
     - ERC721は保有者を管理したテーブル → NFT
   - コントラクトウォレット
 
-### ERC20 / ERC721の魔改造
+### ERC20 / ERC721と魔改造
 
 - EIPの規格にさえ準拠=関数名と引数さえあっていれば、関数のロジックはなんでもいい
 - ERC20の例
-  - AAVEのaToken
-  - Ampleforth
+  - AAVEのaToken : 利子分を追加して残高を返却
+    - https://github.com/aave/protocol-v2/blob/1.0/contracts/protocol/tokenization/AToken.sol#L177-L189
+  - Compoundのcomp : comp tokenの移転と同時にgovernanceのdelegateも移転
+    - https://github.com/compound-finance/compound-protocol/blob/master/contracts/Governance/Comp.sol#L233-L260
+  - Ampleforth : MoneySupplyの増減で価格を維持
+    - balanceOf : https://github.com/ampleforth/ampleforth-contracts/blob/master/contracts/UFragments.sol#L166-L172
+    - rebase : https://github.com/ampleforth/ampleforth-contracts/blob/master/contracts/UFragments.sol#L108-L143
 - ERC721
-  - Uniswap V3 LP
+  - Uniswap V3 LP : SVGとparamでNFTを型から生成
+    - https://github.com/Uniswap/v3-periphery/blob/main/contracts/libraries/NFTSVG.sol#L46-L74
 
-### コントラクトウォレット
-- Gnosis Safe
-- AA
-- メタトランザクション
+#### まとめ
+- EIPはInterfaceの定義のみなので、それさえ守ればその先の可能性は無限大
+- 規格を作ることができる
+  - ブロックチェーンを利用したLGBTカップル調印式 by [famiee](https://www.famiee.com/top/)
+
+### コントラクトウォレットとメタトランザクション
+- アカウントは２つ：EOA / Contract Account
+- Contract Accountはスマートコントラクトなので拡張性は様々
+- Multisig : Gnosis Safe
+  - コアはexecuteのみ。call() or delegateCall()で叩き先を指定するので、全てのtxに柔軟に対応できる
+    - https://github.com/safe-global/safe-contracts/blob/main/contracts/base/Executor.sol#L21-L39
+- AA : Patch wallet
+  - txの実行をbundlerに移譲
+- メタトランザクション : txの署名と実行の分離
+  - EIP3009(permit) : https://github.com/centrehq/centre-tokens/blob/master/contracts/v2/EIP2612.sol#L61-L86
+  - EIP3009 : https://github.com/centrehq/centre-tokens/blob/master/contracts/v2/EIP3009.sol#L89-L118
+
+#### まとめ
+- ブロックチェーンとの接続出来る選択肢を増やすのが重要
 
 ### 番外編 : tornado cashとzkp
--
+- ZKP (zero knowledge proof)とは
+  - ある情報を知っているということを伝えようとする者（証明者）が，その情報を知っているという事実以外の情報を，証明を検証しようとする者（検証者）に与えることなく，検証者に対して証明者がその情報を知っていると証明すること。
+- SNARK（Succinct Non-Interactive Argument of Knowledge）
+  - 簡潔に対話なしで知識の根拠を署名できる = コントラクトに対して一回の通信で証明できる
+
+- tornado cash
+  - 暗号資産のミキシングサービス
+  - tornado cashの仕組み
+    - シークレット値の生成
+      - nulifier + secret を pedersen hash 関数でハッシュ化する
+    - deposit
+      - ハッシュ値を資産とともtxを実行し登録（commitment）
+    - zk-snarkを利用してproofを作成
+      - commitmentの元となったnullifierとsecretを所有していることを証明するproof
+        - https://github.com/tornadocash/tornado-cli/blob/378ddf8b8b92a4924037d7b64a94dbfd5a7dd6e8/cli.js#L328-L365
+    - withdraw
+      - proofを提出することで
+  - Snark と circom
+    - circomでcurcitを書いてcompile
+    - snarkjsを使ってzksnarkのproofを作成（ある情報を持っているということの証明）
+    - そのproofをsmart contractでproofの検証
+
+#### まとめ
+- zkpとはスマートコントラクトはオープンであるけど、情報を明かすことなく情報を持っていると証明できる
+  - クイズ、抽選、private transactionなど
+- ZKPがあると何がいいのか
+  - データ量/計算量の圧縮：ZKRだとtxの情報を全て渡すことなくtxの検証ができる
+    - 証明者はproofを作成するために計算コストを払う必要があるが、検証者は生成されたproofを回路で検証するだけですむ
+    - ORは全てのtxを保存して検証してるので、効率性が桁違いに違う
+  - データの秘匿化：オープンが前提のブロックチェーンにプライベートの概念を持ち込むことができる
+  - プログラミングパラダイムシフト by 日置さん from intmax
 
 ## 情報収集
 - ２次ソース受動&自動的に収集
@@ -160,7 +211,11 @@
   - https://www.galaxy.com/research/insights/ethereum-all-core-developers-call-151/
 - Ethereum All Core Developers Call #152 Writeup
   - https://www.galaxy.com/research/insights/ethereum-all-core-developers-execution-call-152/
+- “Mega EOF Endgame” Specification
+  - https://notes.ethereum.org/@ipsilon/B1nnZ1fl3?utm_source=substack&utm_medium=email
 - DATA AVAILABILITY
   - https://ethereum.org/en/developers/docs/data-availability/
 - ETHCC5 VITALIK
   - https://www.youtube.com/live/kGjFTzRTH3Q?feature=share
+- zk-SNARKsの原理
+  - https://zenn.dev/qope/articles/f94b37ff2d9541

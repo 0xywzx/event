@@ -1,0 +1,3 @@
+- 記事
+  - RLPエンコードしてトランザクションハッシュを取得してみる
+    - https://zenn.dev/0xywzx/articles/2377b05121504c
