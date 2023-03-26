@@ -1,3 +1,5 @@
+# BUILD UP for Web3エンジニア
+
 
 ## 開発者として押さえておくべきイーサリアムアコシステムの現状とこれから
 
@@ -12,7 +14,7 @@
 - もっぱらscalabilityに注力
 - Scalabilityの一つとしてのLayer2
 - L2の実態はスマートコントラクト
-  - L2のトランザクションをまとめてL1に書き込んでいる、その情報を元にL2のnode/sequencerを構築
+  - ORのトランザクションをまとめてL1に書き込んでいる、その情報を元にL2のnode/sequencerを構築
     - ex) OPの実態：[CanonicalTransactionChain (CTC)](https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2)
    - ZKRの場合はstate diffのみを書き込んでる
      - [This means that ZK-rollups only need to provide validity proofs to finalize transactions on Ethereum instead of posting all transaction data on-chain like optimistic rollups.](https://ethereum.org/en/developers/docs/scaling/zk-rollups/)
@@ -95,7 +97,7 @@
   - "[We don't know exactly what the needs of 2032 will demand](https://www.youtube.com/live/kGjFTzRTH3Q?feature=share&t=2171)" by vitalik
   - あったらいいよねをめっちゃ開発しているチェーンはある
 
-## そもそもブロックチェーンをどう捉えるか
+## ブロックチェーンをどう捉えるか
 
 - Web2 : 情報革命 → 完成系としてのAI
 - Web3 : 価値革命 →　??
@@ -145,7 +147,7 @@
 - AA : Patch wallet
   - txの実行をbundlerに移譲
 - メタトランザクション : txの署名と実行の分離
-  - EIP3009(permit) : https://github.com/centrehq/centre-tokens/blob/master/contracts/v2/EIP2612.sol#L61-L86
+  - EIP2612(permit) : https://github.com/centrehq/centre-tokens/blob/master/contracts/v2/EIP2612.sol#L61-L86
   - EIP3009 : https://github.com/centrehq/centre-tokens/blob/master/contracts/v2/EIP3009.sol#L89-L118
 
 #### まとめ
@@ -169,7 +171,7 @@
         - https://github.com/tornadocash/tornado-cli/blob/378ddf8b8b92a4924037d7b64a94dbfd5a7dd6e8/cli.js#L328-L365
     - withdraw
       - proofを提出することで
-  - Snark と circom
+  - [Snark と circom](https://docs.circom.io/)
     - circomでcurcitを書いてcompile
     - snarkjsを使ってzksnarkのproofを作成（ある情報を持っているということの証明）
     - そのproofをsmart contractでproofの検証
@@ -184,7 +186,7 @@
   - データの秘匿化：オープンが前提のブロックチェーンにプライベートの概念を持ち込むことができる
   - プログラミングパラダイムシフト by 日置さん from intmax
 
-## 情報収集
+## その他 : 情報収集方法
 - ２次ソース受動&自動的に収集
   - メルマガ
   - 公式twitter
