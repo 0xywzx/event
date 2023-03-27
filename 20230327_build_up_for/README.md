@@ -24,10 +24,13 @@
     - Optimism (DeFi : Velodromeのみ)
   - ZK Rollup
     - [zkEVM](https://vitalik.ca/general/2022/08/04/zkevm.html)
-      - type 1 : taiko
-      - type 2 : scroll, Polygon zkEVM
+      - type 1 : fully Ethereum-equivalent
+        - taiko
+      - type 2 : fully EVM-equivalent
+        - scroll, Polygon zkEVM
       - type 3 :
-      - type 4 : zkSync Era, starknet with Nethermind
+      - type 4 : high-level-language equivalent
+        - zkSync Era, starknet with Nethermind
     - zkEVm以外
       - starknet : ゲームとstarkEXでapp specific
   - modular chain
@@ -67,6 +70,10 @@
     - EIP4844
   - The Scourge
   - The Verge : [Verkle tree](https://blog.ethereum.org/2021/12/02/verkle-tree-structure) / [Article from John Kuszmaul](https://math.mit.edu/research/highschool/primes/materials/2018/Kuszmaul.pdf)
+    - Merkle treeはrootを生成するために、他の全てのhashが必要になる= widthが大きくなればサイズも大きくなる
+    - Verkle treeは一つのcommitmentを追加すればいい
+      - Merkle tree : log2(n) / Verkle tree :48 bytes
+      -
     - Snarked Ethereum
       - 検証がかなり楽になる
   - The Purge
@@ -242,3 +249,5 @@
   - https://luozhu.mirror.xyz/9cpjU63vBLoQPAalc7ORG_BtHkOJFqPtY9UpK5qWuGM
 - Merkle versus Verkle proofs
   - https://nethermind.io/verkle-trees/
+- PEEPanEIP #46: Verkle tries for Ethereum state with Dankrad Feist
+  - https://youtu.be/RGJOQHzg3UQ

@@ -81,6 +81,7 @@ _class: lead
 
 - もっぱらscalabilityに注力
 - Scalabilityの一つとしてのLayer2
+  - シャーディングも進んでるけど、L2がコアの開発を待たずにできる
 - L2の実態はスマートコントラクト
   - ORのトランザクションをまとめてL1に書き込んでいる、その情報を元にL2のnode/sequencerを構築
     - ex) OP：[CanonicalTransactionChain (CTC)](https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2)
@@ -126,11 +127,13 @@ _class: lead
 
 - 23年はOR、それ以降はZKR
 - ORにはEthrerumのアップデートに追従しやすいよさはある
+  - Arbitrum : [AnyTrust](https://medium.com/offchainlabs/introducing-anytrust-chains-cheaper-faster-l2-chains-with-minimal-trust-assumptions-31def59eb8d7), [Stylus](https://offchain.medium.com/hello-stylus-6b18fecc3a22) / Optimism : [Op Stack](https://optimism.mirror.xyz/fLk5UGjZDiXFuvQh6R_HscMQuuY9ABYNF7PI76-qJYs)
 - StarkNetは独自路線を進んでいて長期でみると面白い。
 - Polygonがどこまで伸びるか
-    - [Supernets](https://wiki.polygon.technology/docs/supernets/get-started/what-are-supernets/) / [Avail](https://www.alchemy.com/dapps/polygon-avail)/ Nightfall/[Miden](https://wiki.polygon.technology/docs/miden/intro/main/)
+    - [Supernets](https://wiki.polygon.technology/docs/supernets/get-started/what-are-supernets/) / [Avail](https://www.alchemy.com/dapps/polygon-avail) / Nightfall/[Miden](https://wiki.polygon.technology/docs/miden/intro/main/)
+    - [LX-LY bridge](https://wiki.polygon.technology/docs/category/zkevm-bridge)
 - L3が増えるかmodular chainが台頭するかは要観察
-  - Optimism op stack / Arbitrum AnyTrust / Polygon Avail / zkSync zkPorter / StarkNet starkWar
+  - Optimism op stack / Arbitrum AnyTrust / Polygon Avail / zkSync zkPorter / StarkNet starkWare
 
 ---
 
@@ -156,7 +159,7 @@ _class: lead
 ### Ethereumの今後をどう捉えるか
 
 - Ethereumはよりセキュリティーを担うレイヤーになる
-  -　<span style="font-size:22px;">PolkadotのRelay Chainによるshared securityやCosmosHubのInterchain security, mesh security</span>
+  - Polkadotの[Relay Chainによるshared security](https://wiki.polkadot.network/docs/learn-parachains)やCosmosHubの[Interchain security](https://blog.cosmos.network/interchain-security-is-coming-to-the-cosmos-hub-f144c45fb035), [mesh security](https://medium.com/@MultichainMedia/mesh-security-is-coming-to-cosmos-74c401da28ff)に比べると、Ethereumはスマートコントラクトに記載する（将来的にはBlob or shard）のみで、セキュリティー提供に柔軟性がない
 - L2の足並みが揃ってないので、Ethereum全体としての成長が鈍化しそう
 - 開発者へのアップデートが少ない
 - ただ、まず今求められている最低限のものを実装している、ゆえにシンプルで複雑なものを上に作りやすい
@@ -260,7 +263,7 @@ _class: lead
 - ZKP (zero knowledge proof)とは
   - ある情報を知っているということを伝えようとする者（証明者）が，その情報を知っているという事実以外の情報を，証明を検証しようとする者（検証者）に与えることなく，検証者に対して証明者がその情報を知っていると証明すること。
 - SNARK（Succinct Non-Interactive Argument of Knowledge）
-  - 簡潔に対話なしで知識の根拠を署名できる = コントラクトに対して一回の通信で証明できる
+  - 簡潔に対話なしで知識の根拠を署名できる = コントラクトに対して一回の通信で証明できるss
 
 ---
 
