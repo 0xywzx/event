@@ -24,10 +24,10 @@
     - Optimism (DeFi : Velodromeのみ)
   - ZK Rollup
     - [zkEVM](https://vitalik.ca/general/2022/08/04/zkevm.html)
-      - type 1 : scroll, taiko
-      - type 2 : zkSync, zkEVM
+      - type 1 : taiko
+      - type 2 : scroll, Polygon zkEVM
       - type 3 :
-      - type 4 : starknet with Nethermind
+      - type 4 : zkSync Era, starknet with Nethermind
     - zkEVm以外
       - starknet : ゲームとstarkEXでapp specific
   - modular chain
@@ -62,6 +62,7 @@
 - Roadmap
   - The merge : PoS (55% complete)
     - PoSへの移行
+      - セキュリティ、計算効率、MEV対策
   - The Surge : Sharding
     - EIP4844
   - The Scourge
@@ -79,7 +80,9 @@
     - ETHの引き出しが可能
     - [Selfdestructの廃止](https://hackmd.io/@vbuterin/selfdestruct)
   - [Cancun](https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/cancun.md)
-    - [EIP-4844: Shard Blob Transactions](https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/cancun.md)
+    - [EIP-4844: Shard Blob Transactions](https://eips.ethereum.org/EIPS/eip-4844)
+      - calldataに書き込んでいたものを、blob(EVMの外にあり30日で消える)
+      - 100倍安くなる
     - [EOF](https://notes.ethereum.org/@ipsilon/eof1-unified-specification)
       - EOF以前
         - EVMでは一個一個チェックしている（指示があるか、指示が適切か、ガス代は十分か）ので無駄がある、ただゆえにシンプルではある
@@ -235,4 +238,7 @@
   - https://www.youtube.com/watch?v=GMeRA-xPp-E
 - Everything about the EVM Object Format (EOF)
   - https://notes.ethereum.org/@ipsilon/evm-object-format-overview
-  -
+- Current Ethereum
+  - https://luozhu.mirror.xyz/9cpjU63vBLoQPAalc7ORG_BtHkOJFqPtY9UpK5qWuGM
+- Merkle versus Verkle proofs
+  - https://nethermind.io/verkle-trees/
