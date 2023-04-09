@@ -70,10 +70,9 @@
   - Finalized: This indicates that the SNARK validity proof for the transaction has been submitted and verified by the smart contract. After this step, the transaction is considered to be final.
     - https://era.zksync.io/docs/dev/fundamentals/zkSync.html#zksync-overview
 
-
 - 見解
   - ドキュメント・アーキテクチャー・人などをみていると、ArbitrumとzkSync、Optimismとscrollで同じ雰囲気を感じる
-
+  - sequencerがEVMとして動いている
 
 ## 参考
 
