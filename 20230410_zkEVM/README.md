@@ -39,7 +39,6 @@
   - https://twitter.com/Scroll_ZKP/status/1632813697251803140
 - bytecode compatible
   - https://twitter.com/pseudotheos/status/1643961572723765250
--
 
 #### Polygon zkEVM (type 2~3)
 - Proof of Donation (PoD) → Proof of Efficiency
@@ -82,6 +81,3 @@
   - https://ethereum.org/en/developers/docs/scaling/zk-rollups/
 - Top 6 zkEVM Projects: The Key to Ethereum’s Scalable Future
   - https://medium.datadriveninvestor.com/6-zkevm-projects-the-key-to-ethereums-scalable-future-12af0bab4f1d
-- zkSync
-  - docs
-    - https://era.zksync.io/docs/dev/fundamentals/zkSync.html#zksync-overview
