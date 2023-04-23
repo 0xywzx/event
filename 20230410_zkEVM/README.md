@@ -80,3 +80,8 @@
   - https://ethereum.org/en/developers/docs/scaling/zk-rollups/
 - Top 6 zkEVM Projects: The Key to Ethereum’s Scalable Future
   - https://medium.datadriveninvestor.com/6-zkevm-projects-the-key-to-ethereums-scalable-future-12af0bab4f1d
+- What is a zkEVM?
+  - https://www.alchemy.com/overviews/zkevm
+- zk, zkVM, zkEVM and their Future
+  - https://mirror.xyz/msfew.eth/Yl64OK3lLG48eJpVB3GxqFEhmWOm6yMlAo9sc1VrQP4
+
