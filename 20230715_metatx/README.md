@@ -1,4 +1,32 @@
 # 20230715 メタトランザクション
+
+## 登壇資料
+https://speakerdeck.com/aramaki/meta-transaction
+
+## EIP3009の実行
+
+script/eip3009.jsの以下を記載
+```
+//ガス代がないけど送信したいアドレスの秘密鍵
+const userPrivateKey = ""
+//ガス代を負担するアドレスの秘密鍵
+const privateKey = ""
+const rpcUrl = ""
+//JPYCの送信先
+const to = ""
+```
+
+eip3009をスクリプトで実行
+```
+cd script
+npm install
+node eip3009.js
+```
+
+
+# メモ
+
+## JPYC
 - JPYCv2
   - centreに準拠
   - Blocklist
