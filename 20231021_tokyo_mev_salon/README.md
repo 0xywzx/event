@@ -15,12 +15,13 @@
 - MEVの文脈においてPoWとPoSで変わったのは、Proposerが事前にわかるようになったこと
 - 1 epoch = 32 slot
   - validatorから32のproposerが選出され、各slotのcommitteeにattesterとして配置される
-  - 広義の意味でProposer ≒　Validator ≒ Miner
+  - 広義の意味でProposer ≒ Validator ≒ Miner
 
 ### PBS = Proposer Builder Separation
 - Validatorの収益機会を均等にし、より多くの主体がvalidatorになるのを促すための仕組み
   - 収益機会が平等でないと価値の高いblockを構築できる力を持った主体だけしかvalidatorになりたがらない
 - blockの構築のアウトソース先としてのMEV-boost
+  - 9割近くがMEV-boostを使ってblock構築されている
 
 ### MEVの種類
 - Arbitrage
@@ -40,7 +41,7 @@
   - blockのDA Layer
 
 - Searcher → Builder
-  -
+  - RPC経由でbuilderにbundleを渡す
 - Builder → Relayer
   - builderの特徴
     - subsidyを多く使いblock構築率をあげる薄利多売型
@@ -67,7 +68,8 @@
 - Relayerの検閲性・インセンティブがないこと
 
 ### 他のPBSの概要
-- 基本的にMEV-Boostの仕組みに似ている = MEV-Boostを理解していれば他のPBSも理解できる
+- 前提
+  - 基本的にMEV-Boostの仕組みに似ている = MEV-Boostを理解していれば他のPBSも理解できる
 - out-of-protocol
   - Optimistic Relay
     - V1 : Execution Clientでのblock検証をなくす
@@ -101,7 +103,7 @@
   - MEV-boostにおけるRelayerをどうするか
 
 ### MEVを考える上で念頭においていること
-- 有事の際にtrustlessにblock構築を行えるか
+- 有事の際にどうtrustlessにblock構築を行えるかを考えることが重要
   - 全てのtrustlessにしようとすると無駄が出るので
 - ePBSになるとは限らない。out-of-protocolで試行錯誤すること
   - Ethereumのscalingのためのshardingも結局rollupにとって変わった
