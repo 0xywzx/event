@@ -1,6 +1,20 @@
 # Tokyo MEV Salon
 
-## MEV-BoostとPBSについて
+## 登壇資料
+
+- Gamma : https://gamma.app/public/MEVTokyo-Overview-of-MEV-Boost-and-PBS-m0dn34udp6mie6i
+- SpeakerDeck : https://speakerdeck.com/aramaki/mevtokyo-overview-of-mev-boost-and-pbs
+
+## 登壇動画
+
+https://www.youtube.com/live/ymgT7r2-F3Y?si=hv0tHKmJKPFWDm5O
+
+
+## 登壇メモ　
+
+### タイトル
+
+MEV-BoostとPBSについて
 
 ### イベントの目的
 - MEV/PBSについて概要を理解し、どのように今後の情報を追えばいいかわかる
@@ -48,7 +62,7 @@
     - subsidyと独自のsorting algorithmsで勝負する効率型
     - subsidyなしでsorting algorithmsとその他付加価値で勝負する王道型
     - 収益機会があるのきのみ参加する利益重視型
-  - builderの収益の高いblockを構築するためには、より多くのorder flowが必要
+  - 収益の高いblockを構築するためには、より多くのorder flowが必要
     - order flowを獲得する戦略
       - 補助金をproposerに渡し、block構築率を高める
       - searcherを優遇する
