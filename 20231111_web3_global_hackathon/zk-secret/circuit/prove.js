@@ -23,6 +23,12 @@ async function run() {
     } else {
         console.log("Invalid proof");
     }
+
+    const solidityCallData = await snarkjs.groth16.exportSolidityCallData(
+      proof,
+      publicSignals
+    )
+    console.log("Call data for solidity verification:", solidityCallData);
 }
 
 run().then(() => {
