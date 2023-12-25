@@ -11,7 +11,7 @@
 //  / /_/ / (__  ) /_/ /  / / /_/ / /_/ / /_/  __/ /
 // /_____/_/____/\__/_/  /_/_.___/\__,_/\__/\___/_/
 //
-// https://www.asciiart.eu/text-to-ascii-art slant
+// from https://www.asciiart.eu/text-to-ascii-art slant
 
 pragma solidity ^0.8.9;
 
