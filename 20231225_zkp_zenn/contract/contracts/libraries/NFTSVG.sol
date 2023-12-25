@@ -25,7 +25,7 @@ library NFTSVG {
                     '<svg viewBox="0 0 100 100" width="600" height="600" fill="none" role="img" xmlns="http://www.w3.org/2000/svg"',
                     " xmlns:xlink='http://www.w3.org/1999/xlink'>",
                     //
-                    '<path id="text-path-a" d="M50 4 A40 40 0 1 1 50 96 A40 40 0 1 1 50 4 Z" />',
+                    '<defs> <path id="text-path-a" d="M50 4 A40 40 0 1 1 50 96 A40 40 0 1 1 50 4 Z" />',
                     // gradient
                     '<linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#',
                     color0,
@@ -37,8 +37,11 @@ library NFTSVG {
                     '<rect width="100%" height="100%" rx="50" fill="url(#gradient)" />',
                     '<rect width="90" height="90" x="5" y="5" rx="50" stroke-width="0.5" stroke="white" />',
                     // title
-                    '<text text-anchor="middle" x="50" y="55" fill="white" font-size="6" font-weight="bold">',
-                    "Zero Knowledge Proof", // variable
+                    '<text text-anchor="middle" x="50" y="47" fill="white" font-size="7" font-weight="bold">',
+                    "ZK Distributer", // variable
+                    '</text>',
+                    '<text text-anchor="middle" x="50" y="62" fill="white" font-size="7" font-weight="bold">',
+                    "Catch The Flag", // variable
                     '</text>',
                     // rounding
                     '<text text-rendering="optimizeSpeed">',

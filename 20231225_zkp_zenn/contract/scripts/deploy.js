@@ -3,7 +3,6 @@ const hre = require("hardhat");
 const generateRoot = require('./generateRoot');
 
 async function main() {
-
   const root = generateRoot();
 
   const VerifierContractFactory = await hre.ethers.getContractFactory("Groth16Verifier");

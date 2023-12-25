@@ -1,17 +1,53 @@
 const merkleTree = require('fixed-merkle-tree');
-const snarkjs = require('snarkjs');
 const crypto = require('crypto');
 const circomlib = require('circomlib');
-const fs = require("fs");
+const { saveArrayAsCSV } = require('./csv');
+
+const MERKLE_TREE_HEIGHT = 20;
+
+function generateRoot() {
+
+  console.log("-> Creating random secret....")
+  const secrets = [];
+  const leaves = [];
+  const secretsForCSV = [];
+  const leavesForCSV = [];
+
+  for (let i = 0; i < 20; i++) {
+    const secret = rbigint(31);
+    const hash = pedersenHash(leInt2Buff(secret, 31));
+    secrets.push(secret);
+    leaves.push(hash);
+
+    secretsForCSV.push([i, secret]);
+    leavesForCSV.push([i, hash]);
+  };
+
+  saveArrayAsCSV("../configs/secrets.csv", secretsForCSV);
+  saveArrayAsCSV("../configs/leaves.csv", leavesForCSV);
+
+  console.log("-> successfully created random secret");
+
+  console.log("-> Creating root....")
+  const tree = new merkleTree(MERKLE_TREE_HEIGHT, leaves);
+  const root = tree.root();
+  console.log("-> Root :", root);
+
+  const hexRoot = "0x" + BigInt(root).toString(16);
+  console.log("-> Root in hex :", hexRoot);
+
+  return root
+}
+
+module.exports = generateRoot;
+
+// ----------------------------------
 
 /** Generate random number of specified byte length */
 const rbigint = (nbytes) => leBuff2int(crypto.randomBytes(nbytes));
 
 /** Compute pedersen hash */
 const pedersenHash = (data) => circomlib.babyJub.unpackPoint(circomlib.pedersenHash.hash(data))[0];
-
-const MERKLE_TREE_HEIGHT = 20;
-const leafIndex = 3; // todo: 選択できるようにする
 
 // const bigInt = require("big-integer");
 // ----------------
@@ -46,33 +82,3 @@ const leInt2Buff = (n, len) => {
   return buff;
 };
 
-// -----------------
-
-function generateRoot() {
-
-  console.log("-> Creating random secret....")
-  const secrets = [];
-  const leaves = [];
-  for (let i = 0; i < 20; i++) {
-    const secret = rbigint(31);
-    const hash = pedersenHash(leInt2Buff(secret, 31));
-    secrets.push(secret);
-    leaves.push(hash);
-  };
-  console.log("-> successfully created random secret");
-  for (let j = 0; j < secrets.length; j++) {
-    console.log(j, secrets[j])
-  };
-
-  console.log("-> Creating root....")
-  const tree = new merkleTree(MERKLE_TREE_HEIGHT, leaves);
-  const root = tree.root();
-  console.log("-> Root :", root);
-
-  const hexRoot = "0x" + BigInt(root).toString(16);
-  console.log("-> Root in hex :", hexRoot);
-
-  return root
-}
-
-module.exports = generateRoot;

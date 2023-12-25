@@ -33,7 +33,7 @@ contract ZKDistributer is ERC721 {
         IVerifier _verifier,
         uint _root
     )
-        ERC721("ZKDistributer", "ZKD")
+        ERC721("ZKDistributerCTF", "ZKD")
     {
         verifier = _verifier;
         root = _root;
@@ -122,7 +122,7 @@ contract ZKDistributer is ERC721 {
             "Invalid proof"
         );
 
-        // Update the nulifier
+        // Update the secretHash status
         secretHashes[_pubSignals[1]] = true;
 
         _safeMint(msg.sender, tokenId);
